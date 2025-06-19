@@ -1,0 +1,66 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Virtual environment
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+*.env
+
+# PyCharm files
+.idea/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Pytest and coverage
+.cache/
+coverage.*
+*.cover
+.hypothesis/
+
+# MyPy & Pyre
+.mypy_cache/
+.pyre/
+
+# Logs and outputs
+*.log
+*.out
+*.err
+
+# Compiled files
+*.pyc
+*.pyo
+*.pyd
+
+# Unit test / Coverage reports
+htmlcov/
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# Build directories
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Distribution
+*.whl
+*.tar.gz
+
+# Editor and OS-specific files
+.DS_Store
+Thumbs.db
+
+# Notebook execution cache
+.ipynb_checkpoints/
