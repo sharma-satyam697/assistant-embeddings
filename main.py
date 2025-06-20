@@ -2,11 +2,13 @@ import asyncio
 
 from db.qdrant import QdrantDB
 from services.logger import Logger
-from startup import create_collections
+from startup import create_collections, delete_collections
 
 
 async def main():
     await QdrantDB.make_connection()
+    # delete all previous colelcitons
+    await delete_collections()
     await Logger.info_log("Connection setup successfully")
     await create_collections()
     # upsert all the data on

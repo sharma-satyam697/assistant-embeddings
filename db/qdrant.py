@@ -6,6 +6,8 @@ from qdrant_client.http.models import VectorParams, Distance
 from qdrant_client import models
 from dotenv import load_dotenv
 
+from services.logger import Logger
+
 load_dotenv()
 
 
@@ -25,10 +27,21 @@ class QdrantDB:
             await QdrantDB._client.create_collection(
                 collection_name=collection,
                 vectors_config=VectorParams(
-                    size=786,
+                    size=768,
                     distance=Distance.COSINE
                 )
             )
+            await Logger.info_log(f"Collection {collection} created successfully")
+        else:
+            await Logger.info_log(f"Skipped creating Collection {collection}")
+
+    @staticmethod
+    async def delete_collection(collection_name:str):
+        await QdrantDB._client.delete_collection(
+            collection_name=collection_name
+        )
+        await Logger.info_log(f"Collection {collection_name} deleted successfully")
+        return None
 
 
     @staticmethod
